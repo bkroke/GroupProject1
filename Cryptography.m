@@ -1,0 +1,1 @@
+sec_msg = input('What is your secret message? \n', 's');

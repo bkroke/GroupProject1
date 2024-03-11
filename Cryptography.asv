@@ -5,7 +5,7 @@ new_sec_msg = []; %this will be populated with the values of sec_msg after being
 for ii = 1:size(ascii, 2)
     if ascii(ii) == 32
         ascii(ii) = 26; %assigns a vallue to 26 to spaces (ascii coe 32)
-        new_sec_msg = [new_sec_msg ascii(ii)]
+        new_sec_msg = [new_sec_msg ascii(ii)];
     else
         %creates a vector called new_sec_msg that contains values corresponding
         %to the letter of the string
@@ -16,6 +16,8 @@ for ii = 1:size(ascii, 2)
     
 end
 disp(new_sec_msg)
+
+% 
 
 
 

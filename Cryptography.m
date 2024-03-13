@@ -15,13 +15,13 @@ ascii = double(sec_msg); %converts each letter in the string sec_msg to its ASCI
 new_sec_msg = []; %this will be populated with the values of sec_msg after being transformed with our key 
 for ii = 1:size(ascii, 2)
     if ascii(ii) == 32
-        ascii(ii) = 26; %assigns a vallue to 26 to spaces (ascii code 32)
+        ascii(ii) = 27; %assigns a vallue to 27 to spaces (ascii code 32)
         new_sec_msg = [new_sec_msg ascii(ii)];
     else
         %creates a vector called new_sec_msg that contains values corresponding
         %to the letter of the string
         %a-z = 0-25
-        code = ascii(ii) - double('a');
+        code = ascii(ii) - (double('a')-1);
         new_sec_msg = [new_sec_msg code]
     end
 end
@@ -56,7 +56,7 @@ for ii = 1:size(new_sec_msg, 2) %when the for row and for col loops are commente
         %for col = 1:size(coded_img, 2) %when the for row and for col
         % loops run out, the red channel in every element of
         % the matrix is changed to the last number in new_sec_msg
-            coded_img(ii, 1, 1) = new_sec_msg(ii);
+            coded_img(1, ii, 1) = new_sec_msg(ii);
             % right now only the first element is being changed
         %end
     %end

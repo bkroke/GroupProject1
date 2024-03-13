@@ -4,7 +4,7 @@
 % second_half = reverse(reverse<109)
 % k = 2;
 % for ii = 1:2:size(first_half, 2)
-% 
+
 %     first_half(ii) = k
 %     k = k + 2
 % end
@@ -46,6 +46,22 @@ disp(first_half1)
 disp(second_half1)
 round_one = [first_half1 second_half1]
 
-
-
-
+disp(new_sec_msg);
+img = imread("Cat_Dive.png");
+coded_img = img;
+% trying to change the red channel of img to the value of new_sec_msg (the
+% coded value for the letter
+for ii = 1:size(new_sec_msg, 2) %when the for row and for col loops are commented out and row and col are changed to ii within the for loop, only the 1st element is changed
+    %for row = 1:size(coded_img, 1)
+        %for col = 1:size(coded_img, 2) %when the for row and for col
+        % loops run out, the red channel in every element of
+        % the matrix is changed to the last number in new_sec_msg
+            coded_img(ii, 1, 1) = new_sec_msg(ii);
+            % right now only the first element is being changed
+        %end
+    %end
+end
+subplot(1, 2, 1)
+imshow(img)
+subplot(1, 2, 2)
+imshow(coded_img)

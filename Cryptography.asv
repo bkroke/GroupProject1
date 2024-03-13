@@ -4,7 +4,7 @@
 % second_half = reverse(reverse<109)
 % k = 2;
 % for ii = 1:2:size(first_half, 2)
-% 
+
 %     first_half(ii) = k
 %     k = k + 2
 % end
@@ -32,7 +32,6 @@ flipnew_sec_msg = flip(new_sec_msg)
 
 for n = 1:2:length(flipnew_sec_msg)
 first_half1(n) = flipnew_sec_msg(n);
-
 end
 
 for n = 2:2:length(flipnew_sec_msg)
@@ -46,7 +45,3 @@ end
 disp(first_half1)
 disp(second_half1)
 round_one = [first_half1 second_half1]
-
-
-
-

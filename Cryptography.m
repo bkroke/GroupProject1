@@ -1,7 +1,7 @@
-%img = imread("Cat_Dive.png");
-%sec_msg = 0;[
+img = imread("Cat_Dive.png");
+sec_msg = 0;
 [coded_img, img] = encode_msg(sec_msg, img);
-secret_message = decode_msg(coded_img, img);
+% secret_message = decode_msg(coded_img, img);
 function [coded_img, img] = encode_msg(sec_msg, img)
     %tried to put whole first part (encoding) into a function, but 
 % alphabet = double('abcdefghijklmnopqrstuvwxyz');
@@ -32,10 +32,12 @@ for ii = 1:size(ascii, 2)
     end
 end
 disp(new_sec_msg);
-first_half1 = [];
-second_half1 = [];
+
 flipnew_sec_msg = flip(new_sec_msg)
 
+for ii = 1:2 %runs the scrambler function 2 times
+    first_half1 = [];
+second_half1 = [];
 for n = 1:length(flipnew_sec_msg)
     if mod(n, 2) == 1
         first_half1 = [first_half1 flipnew_sec_msg(n)];
@@ -43,31 +45,15 @@ for n = 1:length(flipnew_sec_msg)
         second_half1 = [second_half1 flipnew_sec_msg(n)];
     end
 end
-% for n = 1:2:length(flipnew_sec_msg)
-% first_half1(n) = flipnew_sec_msg(n);
-% end
-% 
-% for n = 2:2:length(flipnew_sec_msg)
-% second_half1(n) = flipnew_sec_msg(n);
-% end
-
-%for x = 2:2:size(new_sec_msg, 2)
- %  second_half1(x) = new_sec_msg(x);
-%end
-%round_one = [first_half1 second_half1]
 disp(first_half1)
 disp(second_half1)
-round_one = [first_half1 second_half1]
-
-%%%%NOTES: Write a function for this that can be called multiple times
-
-% for n = 1:round_one(end)
-%     if round_one(n) == 0
-%         round_one(n) = [];
-%     end
+flipnew_sec_msg = [first_half1 second_half1]
+end
 
 
-disp(new_sec_msg);
+
+
+
 img = imread("Cat_Dive.png");
 coded_img = img;
 % trying to change the red channel of img to the value of new_sec_msg (the
@@ -83,18 +69,18 @@ imshow(coded_img)
 
 end 
 %to extract the code from the image
-
-function secret_message = decode_msg(coded_img, img)
-img_output = [];
-    for row = 1:size(coded_img, 1)
-        for col = 1:size(coded_img, 2)
-            if ~isequal(coded_img(row, col, 1), img(row, col, 1))
-                img_output = [img_output coded_img(row, col, 1)];
-            end
-            secret_message = img_output;
-        end
-    end
-end
+% 
+% function secret_message = decode_msg(coded_img, img)
+% img_output = [];
+%     for row = 1:size(coded_img, 1)
+%         for col = 1:size(coded_img, 2)
+%             if ~isequal(coded_img(row, col, 1), img(row, col, 1))
+%                 img_output = [img_output coded_img(row, col, 1)];
+%             end
+%             secret_message = img_output;
+%         end
+%     end
+% end
 
 % function secret_message = decode(coded_img) 
 %     img_output = coded_img(1, length(new_sec_msg, 1); %new_sec_msg will be changed to the final coded vector 

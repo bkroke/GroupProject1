@@ -10,21 +10,21 @@
 
 img = imread("Cat_Dive.png");
 sec_msg = 0;
-[coded_img, img] = encode_msg(sec_msg, img);
-secret_message = decode_msg(coded_img, img);
+%[coded_img, img] = encode_msg(sec_msg, img);
+%secret_message = decode_msg(coded_img, img);
 function [coded_img, img] = encode_msg(sec_msg, img)
 
 img = imread("Cat_Dive.png");
 coded_img = img;
 % trying to change the red channel of img to the value of new_sec_msg (the
 % coded value for the letter
-for ii = 1:size(flipnew_sec_msg, 2) %when the for row and for col loops are commented out and row and col are changed to ii within the for loop, only the 1st element is changed
-    coded_img(1, ii, 1) = flipnew_sec_msg(ii); %new_sec_msg will be changed to the final coded vector
-end
-subplot(1, 2, 1)
-imshow(img)
-subplot(1, 2, 2)
-imshow(coded_img)
+%for ii = 1:size(flipnew_sec_msg, 2) %when the for row and for col loops are commented out and row and col are changed to ii within the for loop, only the 1st element is changed
+    %coded_img(1, ii, 1) = flipnew_sec_msg(ii); %new_sec_msg will be changed to the final coded vector
+%end
+%subplot(1, 2, 1)
+%imshow(img)
+%subplot(1, 2, 2)
+%imshow(coded_img)
 
 
 end

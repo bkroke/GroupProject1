@@ -1,4 +1,59 @@
 %decode the messge
-function final_message = decode_msg(secret_message)
+function final_message = decode_msg(secret_message) 
+firsthalf =[];
+secondhalf = [];
+
+    for n = 1:length(secret_message)
+        if mod(n, 2) == 1
+            firsthalf = [firsthalf secret_message(n)];
+        else
+            secondhalf = [secondhalf secret_message(n)];
+        end
+
+    end
+    disp(firsthalf)
+    disp(secondhalf)
+    firsthalf2 = [];
+    firsthalf3 = [];
+    for n = 1:length(firsthalf)
+        if mod(n, 2) == 1
+            firsthalf2 = [firsthalf2 firsthalf(n)];
+        else
+            firsthalf3 = [firsthalf3 firsthalf(n)];
+        end
+
+    end
+    disp(firsthalf2)
+    disp(firsthalf3)
+
+    secondhalf2 = [];
+    secondhalf3 = [];
+    for n = 1:length(secondhalf)
+        if mod(n, 2) == 1
+            secondhalf2 = [secondhalf2 secondhalf(n)];
+        else
+            secondhalf3 = [secondhalf3 secondhalf(n)];
+        end
+
+    end
+    disp(secondhalf2)
+    disp(secondhalf3)
+    k = 1
+    while numel(firsthalf) ~= 0 | numel(firsthalf2) ~= 0 | numel(firsthalf3) ~= 0 | numel(secondhalf) ~= 0 | numel(secondhalf2) ~= 0 | numel(secondhalf3) ~= 0
+        
+        final_message(k) = firsthalf(1)
+        firsthalf(1) = []
+        k = k + 1;
+        final_message(k) = firsthalf2(1)
+        firsthalf2(1) = []
+        k = k + 1;
+        final_message(k) = firsthalf3(1)
+        firsthalf3(1) = []
+        k = k + 1;
+        k = k + 1;
+        final_message(k) = firsthalf3(1)
+        firsthalf3(1) = []
+        k = k + 1;
+
     
 end

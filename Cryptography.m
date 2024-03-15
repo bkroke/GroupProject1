@@ -3,18 +3,6 @@ sec_msg = 0;
 [coded_img, img] = encode_msg(sec_msg, img);
 secret_message = decode_msg(coded_img, img);
 function [coded_img, img] = encode_msg(sec_msg, img)
-    %tried to put whole first part (encoding) into a function, but 
-% alphabet = double('abcdefghijklmnopqrstuvwxyz');
-% reverse = flip(alphabet)
-% first_half = reverse(reverse>109)
-% second_half = reverse(reverse<109)
-% k = 2;
-% for ii = 1:2:size(first_half, 2)
-
-%     first_half(ii) = k
-%     k = k + 2
-% end
-% disp(first_half)
 sec_msg = input('What is your secret message? \n', 's');
 % need to convert string to ascii codes and change to our new key
 ascii = double(sec_msg); %converts each letter in the string sec_msg to its ASCII code
@@ -49,11 +37,6 @@ disp(first_half1)
 disp(second_half1)
 flipnew_sec_msg = [first_half1 second_half1]
 end
-
-
-
-
-
 img = imread("Cat_Dive.png");
 coded_img = img;
 % trying to change the red channel of img to the value of new_sec_msg (the
@@ -83,7 +66,7 @@ img_output = [];
 
     k = 3;
     for ii = 5:2:size(img_output, 2)
-        k = k + 1;
+        k = k + 1; 
     end
     
 

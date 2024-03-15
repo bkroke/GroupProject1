@@ -1,0 +1,11 @@
+function [coded_img, img] = input_msg(flipnew_sec_msg)
+img = imread("Cat_Dive.png");
+coded_img = img;
+    for ii = 1:size(flipnew_sec_msg, 2) 
+        coded_img(1, ii, 1) = flipnew_sec_msg(ii);
+    end
+subplot(1, 2, 1)
+imshow(img)
+subplot(1, 2, 2)
+imshow(coded_img)
+end

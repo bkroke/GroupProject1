@@ -1,5 +1,5 @@
 
-function [flipnew_sec_msg] = scramble_msg(sec_msg)
+function [flipnew_sec_msg, num_char] = scramble_msg(sec_msg)
 sec_msg = input('What is your secret message? \n', 's');
 % need to convert string to ascii codes and change to our new key
 ascii = double(sec_msg); %converts each letter in the string sec_msg to its ASCII code
@@ -19,6 +19,7 @@ end
 disp(new_sec_msg);
 
 flipnew_sec_msg = flip(new_sec_msg)
+num_char = length(flipnew_sec_msg) %counts the number of characters in the scrambled message; will be used to descramble it later
 
 for ii = 1:2 %runs the scrambler function 2 times
     first_half1 = [];
@@ -30,8 +31,8 @@ for n = 1:length(flipnew_sec_msg)
         second_half1 = [second_half1 flipnew_sec_msg(n)];
     end
 end
-disp(first_half1)
-disp(second_half1)
+%disp(first_half1)
+%disp(second_half1)
 flipnew_sec_msg = [first_half1 second_half1]
 end
 end

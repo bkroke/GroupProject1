@@ -9,4 +9,6 @@ secret_message = [];
             
         end
     end 
+num_char2 = secret_message(1) %this will be used to tell the unscrambler how many times to run itself
+secret_message(1) = [];
 end

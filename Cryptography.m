@@ -17,10 +17,10 @@ sec_msg = 0;
 img = imread("Cat_Dive.png");
 coded_img = img;
 
-[flipnew_sec_msg] = scramble_msg(sec_msg)
-[coded_img, img] = input_msg(flipnew_sec_msg)
+[flipnew_sec_msg, num_char] = scramble_msg(sec_msg)
+[coded_img, img] = input_msg(flipnew_sec_msg, num_char);
 secret_message = extract_msg(coded_img, img)
-decoded_numbers = decode_msg(secret_message)
+%decoded_numbers = decode_msg(secret_message)
 % trying to change the red channel of img to the value of new_sec_msg (the
 % coded value for the letter
 %for ii = 1:size(flipnew_sec_msg, 2) %when the for row and for col loops are commented out and row and col are changed to ii within the for loop, only the 1st element is changed

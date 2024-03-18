@@ -2,7 +2,7 @@ sec_msg = input('What is your secret message? \n', 's');
 % need to convert string to ascii codes and change to our new key
 table_char = [];
 table_scr = [];
-while length(sec_msg) < 100
+while length(sec_msg) < 400
     letter = char(randi([141,151]));
 sec_msg = [sec_msg letter];
 ascii = double(sec_msg); %converts each letter in the string sec_msg to its ASCII code
@@ -51,7 +51,8 @@ table_scr(end+1) = [scr_counter];
 end
 
 tester = table(table_char',table_scr')
-maximum 
+
+scr_max = max(table_scr)
 
 
 %Hypothetically can make a function that will add a randi (0-9) each time and

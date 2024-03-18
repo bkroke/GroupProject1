@@ -1,11 +1,12 @@
 %decode the messge
-function final_message = decode_msg(secret_message) 
+function decoded_numbers = decode_msg(secret_message) 
 firsthalf =[];
 secondhalf = [];
 
     for n = 1:length(secret_message)
         if mod(n, 2) == 1
             firsthalf = [firsthalf secret_message(n)];
+            
         else
             secondhalf = [secondhalf secret_message(n)];
         end
@@ -40,27 +41,40 @@ secondhalf = [];
     disp(secondhalf3)
     k = 1
     total_length = length(firsthalf) + length(firsthalf2) + length(firsthalf3)
+    decoded_numbers = zeros(length(total_length))
     
     while numel(firsthalf) ~= 0 | numel(firsthalf2) ~= 0 | numel(firsthalf3) ~= 0 | numel(secondhalf) ~= 0 | numel(secondhalf2) ~= 0 | numel(secondhalf3) ~= 0
         
-        final_message(k) = firsthalf(1)
-        firsthalf(1) = []
-        k = k + 1;
-        final_message(k) = firsthalf2(1)
+      
+        decoded_numbers(k) = firsthalf2(1)
         firsthalf2(1) = []
         k = k + 1;
-        final_message(k) = firsthalf3(1)
-        firsthalf3(1) = []
-        k = k + 1;
-        final_message(k) = secondhalf(1)
-        secondhalf(1) = []
-        k = k + 1;
-        final_message(k) = secondhalf2(1)
+         decoded_numbers(k) = secondhalf2(1)
         secondhalf2(1) = []
         k = k + 1;
-        final_message(k) = secondhalf3(1)
+        decoded_numbers(k) = firsthalf3(1)
+        firsthalf3(1) = []
+        k = k + 1;
+       
+        decoded_numbers(k) = secondhalf3(1)
         secondhalf3(1) = []
         k = k + 1;
     
     end
-    disp(final_message)
+   flipfinal_numbers = [];
+for ii = 1:size(decoded_numbers, 2)
+    if decoded_numbers(ii) == 27
+        decoded_numbers(ii) = 32; %assigns a vallue to 27 to spaces (ascii code 32)
+        flipfinal_numbers = [flipfinal_numbers decoded_numbers(ii)];
+    else
+        %creates a vector called new_sec_msg that contains values corresponding
+        %to the letter of the string
+        %a-z = 0-25
+        code1 = decoded_numbers(ii) + (double('a')-1);
+        flipfinal_numbers = [flipfinal_numbers code1];
+    end
+end
+final_numbers = flip(flipfinal_numbers)
+final_message = char(final_numbers)
+disp('decode')
+end

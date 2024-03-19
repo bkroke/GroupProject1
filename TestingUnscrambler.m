@@ -50,11 +50,19 @@ table_scr(end+1) = [scr_counter];
 
 end
 
+
 tester = table(table_char',table_scr')
 
-scr_max = max(table_scr)
+char_scram = [0]; %This will be a vector of character-scramble ratio
+for n = 1:length(table_scr)
+char_scram = [char_scram table_scr(n)];
+end
 
 
-%Hypothetically can make a function that will add a randi (0-9) each time and
+
+%scr_max = max(table_scr)
+
+
+%This function adds a randi (0-9) each time and
 %produce a table with scr_counter and character_counter next to each other
 %up to a certain length of characters

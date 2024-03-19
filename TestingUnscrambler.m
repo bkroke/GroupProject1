@@ -58,6 +58,8 @@ for n = 1:length(table_scr)
 char_scram = [char_scram table_scr(n)];
 end
 
+% CALL FUNCTION FOR CRYPTOGRAPHY
+% [char_scram] = TestingUnscrambler(sec_msg)
 
 
 %scr_max = max(table_scr)

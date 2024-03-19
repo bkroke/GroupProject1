@@ -4,7 +4,7 @@
 %extract_msg will take it out of the image
 %decode_msg will decode the message
 %TestingUnscrambler is counting how many scrambles can brute force the
-%message out
+%message out - that value is stored in the vector char_scram
 %Cryptography is the main function to call everything else; has the cat
 %image stored in it for now
 

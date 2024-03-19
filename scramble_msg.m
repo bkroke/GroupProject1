@@ -23,7 +23,7 @@ num_char = length(flipnew_sec_msg) %counts the number of characters in the scram
 
 for ii = 1:2 %runs the scrambler function 2 times
     first_half1 = [];
-second_half1 = [];
+    second_half1 = [];
 for n = 1:length(flipnew_sec_msg)
     if mod(n, 2) == 1
         first_half1 = [first_half1 flipnew_sec_msg(n)];

@@ -4,7 +4,7 @@ img = imread("Cat_Dive.png");
 
 coded_img = img;
 
-coded_img(1, 1, 1) = num_char %sets the first pixel to the indicator value to be read by extract_msg
+%coded_img(1, 1, 1) = num_char; %sets the first pixel to the indicator value to be read by extract_msg
 
     for ii = 1:size(flipnew_sec_msg, 2) 
         coded_img(2, ii, 1) = flipnew_sec_msg(ii);

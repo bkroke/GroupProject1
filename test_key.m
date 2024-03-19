@@ -1,0 +1,18 @@
+secret_message = [1 3 5 2 4 6];
+new_key = [1 2 3];
+counter = 1;
+%new_key = flip(new_key)
+
+while ~isequal(secret_message(1:3), new_key)
+    first_half1 = [];
+    second_half1 = [];
+    for n = 1:length(secret_message)
+        if mod(n, 2) == 1
+            first_half1 = [first_half1 secret_message(n)];
+        else
+            second_half1 = [second_half1 secret_message(n)];
+        end
+    end
+    secret_message = [first_half1 second_half1];
+    counter = counter + 1;
+end

@@ -8,7 +8,6 @@
 img = imread("Cat_Dive.png");
 initial_msg = 0;
 
-
 img = imread("Cat_Dive.png");
 coded_img = img;
 

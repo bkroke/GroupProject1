@@ -50,4 +50,5 @@ for ii = 1:size(decoded_numbers, 2)
     end
 end
 final_numbers = flip(flipfinal_numbers);
+disp(final_numbers(14))
 last_message = char(final_numbers); %changes the ascii codes for the numbers back to characters

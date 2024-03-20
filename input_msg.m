@@ -1,13 +1,8 @@
-function [coded_img, img] = input_msg(flipnew_sec_msg, num_char)
+function [coded_img, img] = input_msg(coded_msg)
 img = imread("Cat_Dive.png");
-%indicator_value = num_char - not sure if this is needed
-
 coded_img = img;
-
-%coded_img(1, 1, 1) = num_char; %sets the first pixel to the indicator value to be read by extract_msg
-
-    for ii = 1:size(flipnew_sec_msg, 2) 
-        coded_img(2, ii, 1) = flipnew_sec_msg(ii);
+    for ii = 1:size(coded_msg, 2) 
+        coded_img(1, ii, 1) = (coded_img(1, ii, 1) + coded_msg(ii)); %adds the secret message to the first row with each element in flipnew_sec_msg being put into the corresponding column of coded_img
     end
 subplot(1, 2, 1)
 imshow(img)

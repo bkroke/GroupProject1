@@ -1,6 +1,6 @@
-function last_message = key_decode(secret_message)
+function last_message = key_decode(extracted_message)
 
-    key = 'abc';
+    key = 'good morning';
     ascii_key = double(key); %converts each letter in the string sec_msg to its ASCII code
     new_key = []; %this will be populated with the values of sec_msg after being transformed with our key 
 for ii = 1:size(ascii_key, 2)
@@ -15,31 +15,27 @@ for ii = 1:size(ascii_key, 2)
         new_key = [new_key code];
     end
 end
-disp(new_key);
-%flipnew_key = flip(new_key)
-counter = 1;
-flipsecret_message = secret_message
-length(new_key)
-disp(new_key)
-disp(flipsecret_message)
 
-while ~isequal(flip(flipsecret_message(end-2:end)), new_key)
-    %[last_message] = scramble_msg(secret_message)
-    first_half1 = [];
-    second_half1 = [];
-    for n = 1:length(flipsecret_message)
+
+
+
+while ~isequal(flip(extracted_message(end-11:end)), new_key)
+    
+    first_half = [];
+    second_half = [];
+    for n = 1:length(extracted_message)
         if mod(n, 2) == 1
-            first_half1 = [first_half1 flipsecret_message(n)];
+            first_half = [first_half extracted_message(n)];
         else
-            second_half1 = [second_half1 flipsecret_message(n)];
+            second_half = [second_half extracted_message(n)];
         end
     end
-
-    counter = counter + 1
-    flipsecret_message = [first_half1 second_half1];
-    disp(flipsecret_message)
+%while the last 12 numbers (length(key)) are not equal to the new_key, the
+%scrambler will run in the same fasion as is the function scramble_msg
+    extracted_message = [first_half second_half];
+   
 end
-decoded_numbers = flipsecret_message;
+decoded_numbers = extracted_message;
 flipfinal_numbers = [];
 for ii = 1:size(decoded_numbers, 2)
     if decoded_numbers(ii) == 27
@@ -53,5 +49,5 @@ for ii = 1:size(decoded_numbers, 2)
         flipfinal_numbers = [flipfinal_numbers code1];
     end
 end
-final_numbers = flip(flipfinal_numbers)
-last_message = char(final_numbers)
+final_numbers = flip(flipfinal_numbers);
+last_message = char(final_numbers); %changes the ascii codes for the numbers back to characters

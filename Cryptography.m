@@ -1,4 +1,6 @@
 %%% KEY %%%
+%sender is the main function to call functions that scamble message and put into the image; has the cat
+%image stored in it for now
 %scramble_msg takes a lower-case message and scrambles it
 %TBD will put the scrambled message into the image
 %extract_msg will take it out of the image
@@ -7,20 +9,21 @@
 %message out - that value is stored in the vector char_scram
 %Cryptography is the main function to call everything else; has the cat
 %image stored in it for now
-
-img = imread("Cat_Dive.png");
-sec_msg = 0;
-%[coded_img, img] = encode_msg(sec_msg, img);
-%secret_message = decode_msg(coded_img, img);
-%function [coded_img, img] = encode_msg(sec_msg, img)
-
-img = imread("Cat_Dive.png");
-coded_img = img;
-
-[flipnew_sec_msg, num_char] = scramble_msg(sec_msg);
-[coded_img, img] = input_msg(flipnew_sec_msg, num_char);
-secret_message = extract_msg(coded_img, img);
-last_message = key_decode(secret_message)
+sender
+Receiver
+% img = imread("Cat_Dive.png");
+% sec_msg = 0;
+% %[coded_img, img] = encode_msg(sec_msg, img);
+% %secret_message = decode_msg(coded_img, img);
+% %function [coded_img, img] = encode_msg(sec_msg, img)
+% 
+% img = imread("Cat_Dive.png");
+% coded_img = img;
+% 
+% [flipnew_sec_msg, num_char] = scramble_msg(sec_msg);
+% [coded_img, img] = input_msg(flipnew_sec_msg, num_char);
+% secret_message = extract_msg(coded_img, img);
+% last_message = key_decode(secret_message)
 %decoded_numbers = decode_msg(secret_message)
 % trying to change the red channel of img to the value of new_sec_msg (the
 % coded value for the letter

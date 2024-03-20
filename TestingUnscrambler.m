@@ -2,7 +2,7 @@ sec_msg = input('What is your secret message? \n', 's');
 % need to convert string to ascii codes and change to our new key
 table_char = [];
 table_scr = [];
-while length(sec_msg) < 200
+while length(sec_msg) < 40
     letter = char(randi([141,151]));
 sec_msg = [sec_msg letter];
 ascii = double(sec_msg); %converts each letter in the string sec_msg to its ASCII code
@@ -62,7 +62,7 @@ end
 % [char_scram] = TestingUnscrambler(sec_msg)
 
 
-%scr_max = max(table_scr)
+scr_max = max(table_scr)
 
 
 %This function adds a randi (0-9) each time and

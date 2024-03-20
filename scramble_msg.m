@@ -59,6 +59,7 @@ for n = 1:length(coded_msg)
     end
 end
 
-coded_msg = [first_half second_half] %changes coded_msg to the combination of first_half and second_half
+coded_msg = [first_half second_half]; %changes coded_msg to the combination of first_half and second_half
 end
+disp(coded_msg)
 end

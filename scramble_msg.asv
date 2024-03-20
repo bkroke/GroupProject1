@@ -30,6 +30,6 @@ for n = 1:length(flipnew_sec_msg)
     end
 end
 
-flipnew_sec_msg = [first_half second_half] %changes flipnew_sec_msg to the combination of first_half and second_half
+flipnew_sec_msg = [first_half second_half] %changes flipnew_sec_
 end
 end

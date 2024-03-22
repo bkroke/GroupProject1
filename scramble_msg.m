@@ -28,26 +28,23 @@ for ii = 1:size(ascii, 2)
         %to the letter of the string
         %a-z = 0-25
         code = ascii(ii) - (double('a')-1);
-        disp(ascii(ii))
-        disp(code)
         ascii_msg = [ascii_msg code];
     end
 end
- 
+
 if length(ascii_msg) < 12
     disp('not long enough')
     coded_msg = 0;
     return
 
-elseif ascii(1:12) ~= new_key
+elseif ~isequal(ascii_msg(1:12), new_key(1:12))
     disp('incorrect format')
     coded_msg = 0;
     return
 end
 
-disp(ascii_msg(14))
 coded_msg = flip(ascii_msg); %flips ascii_msg to scramble message more
-
+coded_msg %#1
 for ii = 1:2 %runs the scrambler function 2 times
     first_half = [];
     second_half = [];
@@ -59,7 +56,12 @@ for n = 1:length(coded_msg)
     end
 end
 
+first_half %#2
+second_half %#3
+
+
 coded_msg = [first_half second_half]; %changes coded_msg to the combination of first_half and second_half
 end
-disp(coded_msg)
+
+coded_msg %#4
 end

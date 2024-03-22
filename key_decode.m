@@ -1,5 +1,4 @@
 function last_message = key_decode(extracted_message)
-disp(extracted_message)
     key = 'good morning';
     ascii_key = double(key); %converts each letter in the string sec_msg to its ASCII code
     new_key = []; %this will be populated with the values of sec_msg after being transformed with our key 
@@ -36,8 +35,7 @@ while ~isequal(flip(extracted_message(end-11:end)), new_key)
    
 end
 decoded_numbers = extracted_message;
-disp('decoded numbers')
-disp(decoded_numbers)
+decoded_numbers
 flipfinal_numbers = [];
 for ii = 1:size(decoded_numbers, 2)
     if decoded_numbers(ii) == 27
@@ -54,5 +52,5 @@ for ii = 1:size(decoded_numbers, 2)
     end
 end
 final_numbers = flip(flipfinal_numbers);
-disp(final_numbers)
+final_numbers
 last_message = char(final_numbers); %changes the ascii codes for the numbers back to characters

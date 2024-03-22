@@ -13,8 +13,8 @@ extracted_message = [];
             
         end
     end 
-    extracted_message = double(extracted_message)
-    orig = double(img(1, 1:length(extracted_message), 1))
-    extracted_message = extracted_message - orig
+    extracted_message = double(extracted_message) 
+    orig = double(img(1, 1:length(extracted_message), 1)) %stores the values in the red channel for the original image
+    extracted_message = extracted_message - orig %subtracts the values from the original image from the values in extracted_message so values are coded consistently
    
 end

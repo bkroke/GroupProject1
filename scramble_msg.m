@@ -32,12 +32,12 @@ for ii = 1:size(ascii, 2)
     end
 end
 
-if length(ascii_msg) < 12
+if length(ascii_msg) < 12 %if the key isn't present, the function will stop (return in sender)
     disp('not long enough')
     coded_msg = 0;
     return
 
-elseif ~isequal(ascii_msg(1:12), new_key(1:12))
+elseif ~isequal(ascii_msg(1:12), new_key(1:12)) %if the key isn't present, the function will stop (return in sender)
     disp('incorrect format')
     coded_msg = 0;
     return

@@ -44,7 +44,7 @@ elseif ~isequal(ascii_msg(1:12), new_key(1:12))
 end
 
 coded_msg = flip(ascii_msg); %flips ascii_msg to scramble message more
-coded_msg %#1
+coded_msg
 for ii = 1:2 %runs the scrambler function 2 times
     first_half = [];
     second_half = [];
@@ -56,12 +56,12 @@ for n = 1:length(coded_msg)
     end
 end
 
-first_half %#2
-second_half %#3
+first_half
+second_half
 
 
 coded_msg = [first_half second_half]; %changes coded_msg to the combination of first_half and second_half
 end
 
-coded_msg %#4
+coded_msg
 end
